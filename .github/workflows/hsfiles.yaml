@@ -1,0 +1,27 @@
+name: hsfiles gen
+
+on:
+  push:
+    branches:
+    - source
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with: 
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+    - run: ./hsfiles.pl > _xnuk.hsfiles
+    - name: deploy
+      run: |
+        git config user.name deploy
+        git config user.email noreply@github.com
+        git config push.default simple
+        
+        git switch master
+        mv _xnuk.hsfiles xnuk.hsfiles
+        git add xnuk.hsfiles
+        git commit -m "Bring from $GITHUB_SHA"
+        git push origin HEAD --force-with-lease
