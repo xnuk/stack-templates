@@ -1,5 +1,7 @@
 {-# START_FILE LICENSE #-}
-Copyright (c) {{copyright}}{{^copyright}}{{year}} {{author-name}}{{#author-email}} <{{author-email}}>{{/author-email}}{{/copyright}}.
+BSD 3-Clause License
+
+Copyright (c) {{copyright}}{{^copyright}}{{year}} {{author-name}}{{#author-email}} <{{author-email}}>{{/author-email}}{{/copyright}}
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -26,9 +28,6 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-You acknowledge that this software is not designed, licensed or intended for
-use in the design, construction, operation or maintenance of any nuclear facility.
 {-# START_FILE Main.hs #-}
 import App (main)
 {-# START_FILE package.yaml #-}
@@ -51,9 +50,9 @@ executable:
     - default-extensions: null
     - mixins: null
 
-defaults: xnuk/haskell@hpack
+defaults: xnuk/xnuk@hpack
 {-# START_FILE stack.yaml #-}
-resolver: lts-16.10
+resolver: lts-16.12
 compiler-check: newer-minor
 system-ghc: true
 {-# START_FILE src/App.hs #-}
