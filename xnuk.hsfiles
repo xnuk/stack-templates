@@ -52,7 +52,7 @@ executable:
 
 defaults: xnuk/xnuk@hpack
 {-# START_FILE stack.yaml #-}
-resolver: lts-16.12
+resolver: lts-16.20
 compiler-check: newer-minor
 system-ghc: true
 {-# START_FILE src/App.hs #-}
